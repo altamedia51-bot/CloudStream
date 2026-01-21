@@ -1,0 +1,8 @@
+{
+  "name": "CloudStream Pro - VPS Streaming Architect",
+  "description": "A high-performance dashboard for server-side multi-platform 24/7 streaming using FFmpeg, Node.js, and SQLite.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

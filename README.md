@@ -1,11 +1,40 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# 🚀 CloudStream Pro Deployment Guide
 
-  <h1>Built with AI Studio</h2>
+Ikuti langkah ini untuk menjalankan aplikasi di VPS Linux Anda.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 1. Persiapan Server
+```bash
+# Update system
+sudo apt update && sudo apt upgrade -y
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+# Install FFmpeg (Jantung aplikasi)
+sudo apt install ffmpeg -y
 
-</div>
+# Install Node.js v18+
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+## 2. Clone & Install
+```bash
+git clone <your-repo-url>
+cd cloudstream-pro
+npm install
+```
+
+## 3. Folder Uploads
+Pastikan folder media tersedia:
+```bash
+mkdir -p uploads/videos uploads/audios uploads/images
+```
+
+## 4. Jalankan dengan PM2 (Production)
+```bash
+sudo npm install -g pm2
+npm run prod
+```
+
+## 5. Monitoring & Logs
+Akses dashboard via IP VPS Anda di port 5000.
+Gunakan perintah `pm2 logs cloudstream` untuk melihat aktivitas server secara detail.
